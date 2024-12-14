@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="zh">
+<meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>学院、学科及研究方向</title>
+    <link rel="stylesheet" href="../static/css/user_page.css"> <!-- 引入CSS文件 -->
+<body>
+    <h1>学院、学科及研究方向</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>学院、学科及研究方向</th>
+                <th>导师</th>
+                <th>总招生数（推免数）</th>
+                <th>考试科目</th>
+                <th>备注</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for college in data %}
+                <!-- 学院行 -->
+                <tr class="college">
+                    <td>{{ college.college_name }}</td>
+                    <td></td>
+                    <td>{{ college.total_admission }} ({{ college.recommendation_admission }})</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                {% for first_subject in college.first_subjects %}
+                    <!-- 一级学科行 -->
+                    <tr class="first-subject">
+                        <td class="indent">{{ first_subject.subject_name }}</td>
+                        <td></td>
+                        <td>{{ first_subject.total_admission }} ({{ first_subject.recommendation_admission }})</td>
+                        <td></td>
+                        <td>{{ first_subject.description }}</td>
+                    </tr>
+                    {% for second_subject in first_subject.second_subjects %}
+                        <!-- 二级学科行 -->
+                        <tr class="second-subject">
+                            <td class="indent">{{ second_subject.subject_name }}</td>
+                            <td></td>
+                            <td></td>
+                            <td>{{ second_subject.exam_subjects }}</td>
+                            <td></td>
+                        </tr>
+                        {% for director in second_subject.directors %}
+                            <!-- 导师行 -->
+                            <tr class="director">
+                                <td class="indent"></td>
+                                <td>{{ director.name }}</td>
+                                <td></td>
+                                <td></td>
+                                <td></td>
+                            </tr>
+                        {% endfor %}
+                    {% endfor %}
+                {% endfor %}
+            {% endfor %}
+        </tbody>
+    </table>
+</body>
+</html>

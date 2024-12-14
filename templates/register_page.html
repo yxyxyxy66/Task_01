@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>注册页面</title>
+    <link rel="stylesheet" href="../static/css/register_page.css">
+</head>
+<body>
+    <div class="register-container">
+        <h2>注册</h2>
+        <form method="POST" action="{{ url_for('register_page') }}">
+            <label for="username">用户名：</label>
+            <input type="text" id="username" name="username" required><br><br>
+            <label for="password">密码：</label>
+            <input type="password" id="password" name="password" required><br><br>
+            <label for="confirm_password">确认密码：</label>
+            <input type="password" id="confirm_password" name="confirm_password" required><br><br>
+            <button type="submit">注册</button>
+        </form>
+         <p>已有账号？<a href="{{ url_for('login_page') }}">返回登陆</a></p>
+        {% if error_message %}
+        <p style="color: red;">{{ error_message }}</p>
+        {% endif %}
+    </div>
+</body>
+</html>
