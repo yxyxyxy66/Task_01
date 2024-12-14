@@ -1,0 +1,51 @@
+/* styles.css */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 20px 0;
+    font-size: 14px;
+}
+
+th, td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+th {
+    background-color: #f4f4f4;
+}
+
+tr:nth-child(even) {
+    background-color: #f9f9f9;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.college {
+    background-color: #dbeaff; /* 学院行的背景色 */
+    font-weight: bold;
+}
+
+.first-subject {
+    background-color: #e7f4ff; /* 一级学科行背景色 */
+    font-weight: bold;
+}
+
+.second-subject {
+    background-color: #f4faff; /* 二级学科行背景色 */
+    padding-left: 20px;
+}
+
+.director {
+    background-color: #ffffff; /* 导师行背景色 */
+    font-size: 13px;
+    font-style: italic;
+}
+
+.indent {
+    text-align: left;
+    padding-left: 20px;
+}

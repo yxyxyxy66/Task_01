@@ -1,0 +1,88 @@
+/* styles.css */
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    background-image: url('/static/images/background.jpg');
+    justify-content: center;
+    align-items: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.register-container {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 20px;
+    border-radius: 5px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+    width: 100%;
+    max-width: 400px;
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    margin-bottom: 5px;
+    color: #333;
+}
+
+input[type="text"],
+input[type="password"] {
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    box-sizing: border-box; /* 使内边距包含在宽度内 */
+    background-color: #E8F0FE;
+}
+
+button {
+    background-color: #5c67f2;
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #4a54e1;
+}
+
+p {
+    margin-top: 15px;
+    font-size: 14px;
+    text-align: center;
+}
+
+a {
+    color: #5c67f2;
+    text-decoration: none;
+}
+
+/* 错误消息样式 */
+.error-message {
+    color: red;
+    font-size: 14px;
+    margin-bottom: 15px;
+}
+
+/* 响应式设计 */
+@media (max-width: 480px) {
+    .register-container {
+        padding: 20px;
+        margin: 10px;
+    }
+}
